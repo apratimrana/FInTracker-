@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - FinTrack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success" href="index.html">
+                <i class="fas fa-chart-line me-2"></i>FinTrack
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="how-it-works.html">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="demo.html">Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-success btn-sm" href="#" onclick="scrollToSignup()">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-4 fw-bold mb-3">Get in Touch</h1>
+                    <p class="lead">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="page-content">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Contact Form -->
+                <div class="col-lg-8">
+                    <div class="contact-form">
+                        <h3 class="fw-bold mb-4">Send us a Message</h3>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <select class="form-select" id="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="feedback">Feature Request / Feedback</option>
+                                    <option value="bug">Bug Report</option>
+                                    <option value="partnership">Partnership</option>
+                                    <option value="press">Press Inquiry</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea class="form-control" id="message" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="newsletter">
+                                    <label class="form-check-label" for="newsletter">
+                                        I'd like to receive updates about FinTrack features and tips
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-success btn-lg">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <h3 class="fw-bold mb-4">Contact Information</h3>
+                        
+                        <!-- Contact Details -->
+                        <div class="contact-item mb-4">
+                            <div class="d-flex align-items-start">
+                                <div class="contact-icon bg-success text-white rounded-circle me-3">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Email</h6>
+                                    <p class="text-muted mb-0">hello@fintrack.com</p>
+                                    <small class="text-muted">We typically respond within 24 hours</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item mb-4">
+                            <div class="d-flex align-items-start">
+                                <div class="contact-icon bg-success text-white rounded-circle me-3">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Phone</h6>
+                                    <p class="text-muted mb-0">+1 (555) 123-4567</p>
+                                    <small class="text-muted">Mon-Fri, 9AM-6PM EST</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item mb-4">
+                            <div class="d-flex align-items-start">
+                                <div class="contact-icon bg-success text-white rounded-circle me-3">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Office</h6>
+                                    <p class="text-muted mb-0">
+                                        123 Financial Street<br>
+                                        Tech City, TC 12345
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="social-section mb-4">
+                            <h6 class="fw-bold mb-3">Follow Us</h6>
+                            <div class="social-links">
+                                <a href="#" class="social-link me-3">
+                                    <i class="fab fa-twitter"></i>
+                                    <span>Twitter</span>
+                                </a>
+                                <a href="#" class="social-link me-3">
+                                    <i class="fab fa-facebook"></i>
+                                    <span>Facebook</span>
+                                </a>
+                                <a href="#" class="social-link me-3">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Link -->
+                        <div class="faq-section">
+                            <div class="card border-0 bg-light">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-question-circle fa-2x text-success mb-3"></i>
+                                    <h6 class="fw-bold">Need Help?</h6>
+                                    <p class="text-muted small mb-3">Check our FAQ section for quick answers to common questions.</p>
+                                    <a href="#" class="btn btn-outline-success btn-sm">View FAQ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Response Times -->
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="response-times bg-light rounded p-4">
+                        <h4 class="fw-bold mb-4 text-center">Our Response Times</h4>
+                        <div class="row g-4">
+                            <div class="col-md-3">
+                                <div class="response-item text-center">
+                                    <div class="response-icon mb-3">
+                                        <i class="fas fa-bug text-danger"></i>
+                                    </div>
+                                    <h6 class="fw-bold">Bug Reports</h6>
+                                    <p class="text-muted">Within 2 hours</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="response-item text-center">
+                                    <div class="response-icon mb-3">
+                                        <i class="fas fa-life-ring text-primary"></i>
+                                    </div>
+                                    <h6 class="fw-bold">Technical Support</h6>
+                                    <p class="text-muted">Within 24 hours</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="response-item text-center">
+                                    <div class="response-icon mb-3">
+                                        <i class="fas fa-lightbulb text-warning"></i>
+                                    </div>
+                                    <h6 class="fw-bold">Feature Requests</h6>
+                                    <p class="text-muted">Within 48 hours</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="response-item text-center">
+                                    <div class="response-icon mb-3">
+                                        <i class="fas fa-envelope text-success"></i>
+                                    </div>
+                                    <h6 class="fw-bold">General Inquiries</h6>
+                                    <p class="text-muted">Within 24 hours</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-success text-white py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-8 mx-auto">
+                    <h3 class="fw-bold mb-3">Ready to Get Started?</h3>
+                    <p class="lead mb-4">Join thousands of users who are already managing their finances better with FinTrack</p>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="index.html" class="btn btn-light btn-lg">
+                            <i class="fas fa-rocket me-2"></i>Start Free Today
+                        </a>
+                        <a href="demo.html" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-play me-2"></i>See Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-chart-line me-2 text-success"></i>FinTrack
+                    </h5>
+                    <p class="text-muted">
+                        Empowering students and young professionals to take control of their financial future 
+                        with smart, simple tools.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://twitter.com" target="_blank" class="text-success me-3" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="text-success me-3" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://linkedin.com" target="_blank" class="text-success me-3" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com" target="_blank" class="text-success" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Product</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="features.html" class="text-muted text-decoration-none">Features</a></li>
+                        <li><a href="demo.html" class="text-muted text-decoration-none">Demo</a></li>
+                        <li><a href="how-it-works.html" class="text-muted text-decoration-none">How It Works</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-muted text-decoration-none">About</a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Help Center</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none" onclick="showPrivacyPolicy(); return false;">Privacy Policy</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none" onclick="showTermsOfService(); return false;">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Get Started</h6>
+                    <a href="#" class="btn btn-success btn-sm" onclick="scrollToSignup()">
+                        Sign Up Free
+                    </a>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2024 FinTrack. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-muted mb-0">Made with <i class="fas fa-heart text-success"></i> for better financial health</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

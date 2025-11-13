@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrack - Personal Finance Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success" href="index.html">
+                <i class="fas fa-chart-line me-2"></i>FinTrack
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="how-it-works.html">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="demo.html">Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-3 login-required">
+                        <a class="btn btn-success btn-sm" href="#" onclick="scrollToSignup()">Get Started</a>
+                    </li>
+                    <li class="nav-item ms-3 auth-required" style="display: none;">
+                        <div class="dropdown">
+                            <button class="btn btn-outline-success btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-user me-1"></i><span id="userName">User</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" onclick="if(typeof showDashboard === 'function') showDashboard(); return false;"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="if(typeof showTransactionModal === 'function') showTransactionModal(); return false;"><i class="fas fa-plus me-2"></i>Add Transaction</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="if(typeof showBudgetModal === 'function') showBudgetModal(); return false;"><i class="fas fa-chart-pie me-2"></i>Manage Budget</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="if(typeof showAllTransactions === 'function') showAllTransactions(); return false;"><i class="fas fa-list me-2"></i>View All Transactions</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#" onclick="if(typeof logout === 'function') logout(); return false;"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section bg-light">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold text-dark mb-4">
+                        Take Control of Your Money, <span class="text-success">Effortlessly</span>
+                    </h1>
+                    <p class="lead text-muted mb-4">
+                        FinTrack helps students and young professionals manage their finances with smart expense tracking, 
+                        budget planning, and savings insights. Simple, secure, and powerful.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#" class="btn btn-success btn-lg px-4" onclick="scrollToSignup(event)">
+                            <i class="fas fa-rocket me-2"></i>Get Started Free
+                        </a>
+                        <a href="demo.html" class="btn btn-outline-success btn-lg px-4">
+                            <i class="fas fa-play me-2"></i>See Demo
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <small class="text-muted">
+                            <i class="fas fa-shield-alt text-success me-1"></i>
+                            Secure • Free • No Credit Card Required
+                        </small>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="hero-illustration">
+                        <i class="fas fa-chart-pie display-1 text-success mb-4"></i>
+                        <div class="mock-dashboard bg-white rounded shadow p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge bg-success">Monthly Budget</span>
+                                <span class="text-success fw-bold">₹2,400</span>
+                            </div>
+                            <div class="progress mb-3" style="height: 8px;">
+                                <div class="progress-bar bg-success" style="width: 65%"></div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="text-success fw-bold">₹1,560</div>
+                                    <small class="text-muted">Spent</small>
+                                </div>
+                                <div class="col-4">
+                                    <div class="text-success fw-bold">₹840</div>
+                                    <small class="text-muted">Remaining</small>
+                                </div>
+                                <div class="col-4">
+                                    <div class="text-success fw-bold">35%</div>
+                                    <small class="text-muted">Saved</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Preview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-3">Everything You Need to Manage Your Finances</h2>
+                    <p class="text-muted">Powerful features designed for students and young professionals</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4 h-100">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-wallet text-success"></i>
+                        </div>
+                        <h5 class="fw-bold">Expense Tracking</h5>
+                        <p class="text-muted">Log daily expenses and income with our intuitive interface</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4 h-100">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-chart-bar text-success"></i>
+                        </div>
+                        <h5 class="fw-bold">Budget Planning</h5>
+                        <p class="text-muted">Set monthly budgets and track your progress in real-time</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4 h-100">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-piggy-bank text-success"></i>
+                        </div>
+                        <h5 class="fw-bold">Savings Insights</h5>
+                        <p class="text-muted">Smart analysis of your spending patterns and saving potential</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="features.html" class="btn btn-outline-success">
+                    View All Features <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-success text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3 class="fw-bold mb-2">Ready to take control of your finances?</h3>
+                    <p class="mb-0">Join thousands of students and professionals who trust FinTrack</p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <a href="#" class="btn btn-light btn-lg" onclick="scrollToSignup(event)">
+                        Start Free Today
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-chart-line me-2 text-success"></i>FinTrack
+                    </h5>
+                    <p class="text-muted">
+                        Empowering students and young professionals to take control of their financial future 
+                        with smart, simple tools.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://twitter.com" target="_blank" class="text-success me-3" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="text-success me-3" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://linkedin.com" target="_blank" class="text-success me-3" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com" target="_blank" class="text-success" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Product</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="features.html" class="text-muted text-decoration-none">Features</a></li>
+                        <li><a href="demo.html" class="text-muted text-decoration-none">Demo</a></li>
+                        <li><a href="how-it-works.html" class="text-muted text-decoration-none">How It Works</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-muted text-decoration-none">About</a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Help Center</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none" onclick="showPrivacyPolicy(); return false;">Privacy Policy</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none" onclick="showTermsOfService(); return false;">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Get Started</h6>
+                    <a href="#" class="btn btn-success btn-sm" onclick="scrollToSignup(event)">
+                        Sign Up Free
+                    </a>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2024 FinTrack. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-muted mb-0">Made with <i class="fas fa-heart text-success"></i> for better financial health</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Authentication Modal -->
+    <div class="modal fade" id="authModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="authModalTitle">Get Started with FinTrack</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Login Form -->
+                    <form id="loginForm" class="login-required">
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" id="loginEmail" class="form-control" placeholder="your@email.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Sign In</button>
+                        </div>
+                    </form>
+
+                    <!-- Register Form -->
+                    <form id="registerForm" class="login-required" style="display: none;">
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" id="registerName" class="form-control" placeholder="Your full name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" id="registerEmail" class="form-control" placeholder="your@email.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" id="registerPassword" class="form-control" placeholder="Create a secure password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Monthly Budget (Optional)</label>
+                            <input type="number" id="registerBudget" class="form-control" placeholder="0" min="0" step="0.01">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Currency</label>
+                            <select id="registerCurrency" class="form-select">
+                                <option value="INR">INR (₹)</option>
+                                <option value="USD">USD ($)</option>
+                                <option value="EUR">EUR (€)</option>
+                                <option value="GBP">GBP (£)</option>
+                            </select>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Create Free Account</button>
+                        </div>
+                    </form>
+
+                    <div class="text-center mt-3">
+                        <small class="text-muted">
+                            <span class="login-required" id="loginToggleText">Don't have an account? <a href="#" id="showRegister" class="text-success" onclick="event.preventDefault(); showRegisterForm(); return false;">Sign up</a></span>
+                            <span class="login-required" id="registerToggleText" style="display: none;">Already have an account? <a href="#" id="showLogin" class="text-success" onclick="event.preventDefault(); showLoginForm(); return false;">Sign in</a></span>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Modal -->
+    <div class="modal fade" id="dashboardModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Your Financial Dashboard</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Dashboard content will be loaded here -->
+                    <div id="dashboardContent">
+                        <div class="text-center">
+                            <div class="spinner-border text-success" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-2">Loading your dashboard...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transaction Modal -->
+    <div class="modal fade" id="transactionModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="transactionModalTitle">Add Transaction</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="transactionForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Transaction Type</label>
+                                <select id="transactionType" class="form-select" required>
+                                    <option value="">Select type</option>
+                                    <option value="Income">Income</option>
+                                    <option value="Expense">Expense</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Amount</label>
+                                <input type="number" id="transactionAmount" class="form-control" placeholder="0.00" min="0.01" step="0.01" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <input type="text" id="transactionDescription" class="form-control" placeholder="What was this for?" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Category</label>
+                                <input type="text" id="transactionCategory" class="form-control" placeholder="e.g., Food, Transport" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Payment Method</label>
+                                <select id="transactionPaymentMethod" class="form-select">
+                                    <option value="cash">Cash</option>
+                                    <option value="card">Card</option>
+                                    <option value="upi">UPI</option>
+                                    <option value="netbanking">Net Banking</option>
+                                    <option value="wallet">Wallet</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Date</label>
+                            <input type="date" id="transactionDate" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Notes (Optional)</label>
+                            <textarea id="transactionNotes" class="form-control" rows="3" placeholder="Additional notes..."></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Add Transaction</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

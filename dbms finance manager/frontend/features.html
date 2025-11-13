@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - FinTrack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success" href="index.html">
+                <i class="fas fa-chart-line me-2"></i>FinTrack
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="how-it-works.html">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="demo.html">Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-success btn-sm" href="#" onclick="scrollToSignup()">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-4 fw-bold mb-3">Powerful Features for Smart Money Management</h1>
+                    <p class="lead">Everything you need to take control of your finances, all in one place</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Features -->
+    <section class="page-content">
+        <div class="container">
+            <!-- Expense & Income Tracking -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <div class="feature-detail">
+                        <div class="feature-icon-large mb-4">
+                            <i class="fas fa-wallet text-success"></i>
+                        </div>
+                        <h2 class="fw-bold mb-3">Expense & Income Tracking</h2>
+                        <p class="lead text-muted mb-4">
+                            Log your daily expenses and income with our intuitive interface. Categorize transactions, 
+                            add notes, and track every dollar that comes in and goes out.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Quick expense entry with smart categorization</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Income tracking and salary management</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Receipt photo uploads and storage</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Custom categories and tags</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Recurring transaction setup</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-preview bg-white rounded shadow p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="mb-0">Recent Transactions</h6>
+                            <span class="badge bg-success">Today</span>
+                        </div>
+                        <div class="transaction-list">
+                            <div class="transaction-item d-flex justify-content-between align-items-center py-2 border-bottom">
+                                <div class="d-flex align-items-center">
+                                    <div class="transaction-icon bg-success text-white rounded-circle me-3">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold">Lunch</div>
+                                        <small class="text-muted">Food & Dining</small>
+                                    </div>
+                                </div>
+                                <span class="text-danger fw-bold">-₹12.50</span>
+                            </div>
+                            <div class="transaction-item d-flex justify-content-between align-items-center py-2 border-bottom">
+                                <div class="d-flex align-items-center">
+                                    <div class="transaction-icon bg-primary text-white rounded-circle me-3">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold">Salary</div>
+                                        <small class="text-muted">Income</small>
+                                    </div>
+                                </div>
+                                <span class="text-success fw-bold">+₹2,500.00</span>
+                            </div>
+                            <div class="transaction-item d-flex justify-content-between align-items-center py-2">
+                                <div class="d-flex align-items-center">
+                                    <div class="transaction-icon bg-warning text-white rounded-circle me-3">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold">Gas</div>
+                                        <small class="text-muted">Transportation</small>
+                                    </div>
+                                </div>
+                                <span class="text-danger fw-bold">-₹45.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Budget Planning -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="feature-detail">
+                        <div class="feature-icon-large mb-4">
+                            <i class="fas fa-chart-bar text-success"></i>
+                        </div>
+                        <h2 class="fw-bold mb-3">Budget Planning & Tracking</h2>
+                        <p class="lead text-muted mb-4">
+                            Set monthly budgets and track your progress in real-time. Get alerts when you're approaching 
+                            your limits and insights on how to optimize your spending.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Monthly and weekly budget planning</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Real-time budget progress tracking</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Smart spending alerts and notifications</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Budget vs actual spending analysis</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Goal-based savings targets</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="feature-preview bg-white rounded shadow p-4">
+                        <h6 class="mb-3">Monthly Budget Overview</h6>
+                        <div class="budget-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Food & Dining</span>
+                                <span>₹450 / ₹500</span>
+                            </div>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-warning" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="budget-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Transportation</span>
+                                <span>₹180 / ₹200</span>
+                            </div>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-success" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="budget-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Entertainment</span>
+                                <span>₹120 / ₹150</span>
+                            </div>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-success" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="budget-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Shopping</span>
+                                <span>₹280 / ₹300</span>
+                            </div>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-warning" style="width: 93%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Savings Insights -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <div class="feature-detail">
+                        <div class="feature-icon-large mb-4">
+                            <i class="fas fa-piggy-bank text-success"></i>
+                        </div>
+                        <h2 class="fw-bold mb-3">Smart Savings Insights</h2>
+                        <p class="lead text-muted mb-4">
+                            Get intelligent analysis of your spending patterns and discover opportunities to save more. 
+                            Our AI-powered insights help you make better financial decisions.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Spending pattern analysis</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Savings opportunity recommendations</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Monthly savings trends and projections</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Financial health score</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Goal tracking and achievement</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-preview bg-white rounded shadow p-4">
+                        <h6 class="mb-3">Savings Insights</h6>
+                        <div class="savings-stats mb-4">
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <div class="savings-metric">
+                                        <div class="display-6 text-success fw-bold">₹840</div>
+                                        <small class="text-muted">Saved This Month</small>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="savings-metric">
+                                        <div class="display-6 text-success fw-bold">35%</div>
+                                        <small class="text-muted">Savings Rate</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="insights-list">
+                            <div class="insight-item p-3 bg-light rounded mb-2">
+                                <i class="fas fa-lightbulb text-warning me-2"></i>
+                                <small>You could save ₹50 more by reducing dining out by 20%</small>
+                            </div>
+                            <div class="insight-item p-3 bg-light rounded mb-2">
+                                <i class="fas fa-trophy text-success me-2"></i>
+                                <small>Great job! You're on track to meet your savings goal</small>
+                            </div>
+                            <div class="insight-item p-3 bg-light rounded">
+                                <i class="fas fa-chart-line text-primary me-2"></i>
+                                <small>Your savings rate increased by 5% this month</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Visualization -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="feature-detail">
+                        <div class="feature-icon-large mb-4">
+                            <i class="fas fa-chart-pie text-success"></i>
+                        </div>
+                        <h2 class="fw-bold mb-3">Beautiful Data Visualization</h2>
+                        <p class="lead text-muted mb-4">
+                            Visualize your financial data with interactive charts and graphs. Understand your spending 
+                            patterns at a glance with our intuitive dashboard.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Interactive pie charts for expense breakdown</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Trend analysis with line graphs</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Monthly and yearly comparisons</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Custom date range filtering</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Export reports as PDF or CSV</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="feature-preview bg-white rounded shadow p-4">
+                        <h6 class="mb-3">Expense Breakdown</h6>
+                        <div class="chart-placeholder bg-light rounded d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <div class="text-center text-muted">
+                                <i class="fas fa-chart-pie fa-3x mb-2"></i>
+                                <div>Interactive Charts</div>
+                                <small>Powered by Chart.js</small>
+                            </div>
+                        </div>
+                        <div class="chart-legend mt-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="legend-item d-flex align-items-center mb-1">
+                                        <div class="legend-color bg-success rounded-circle me-2" style="width: 12px; height: 12px;"></div>
+                                        <small>Food & Dining</small>
+                                    </div>
+                                    <div class="legend-item d-flex align-items-center mb-1">
+                                        <div class="legend-color bg-primary rounded-circle me-2" style="width: 12px; height: 12px;"></div>
+                                        <small>Transportation</small>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="legend-item d-flex align-items-center mb-1">
+                                        <div class="legend-color bg-warning rounded-circle me-2" style="width: 12px; height: 12px;"></div>
+                                        <small>Entertainment</small>
+                                    </div>
+                                    <div class="legend-item d-flex align-items-center mb-1">
+                                        <div class="legend-color bg-info rounded-circle me-2" style="width: 12px; height: 12px;"></div>
+                                        <small>Other</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <div class="feature-detail">
+                        <div class="feature-icon-large mb-4">
+                            <i class="fas fa-shield-alt text-success"></i>
+                        </div>
+                        <h2 class="fw-bold mb-3">Secure & Private</h2>
+                        <p class="lead text-muted mb-4">
+                            Your financial data is protected with enterprise-grade security. We use encryption, 
+                            secure authentication, and never share your personal information.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>256-bit SSL encryption</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Secure login with 2FA support</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Data stored in secure MongoDB</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Regular security audits</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Privacy-first approach</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-preview bg-white rounded shadow p-4">
+                        <h6 class="mb-3">Security Features</h6>
+                        <div class="security-features">
+                            <div class="security-item d-flex align-items-center mb-3">
+                                <div class="security-icon bg-success text-white rounded-circle me-3">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Encrypted Data</div>
+                                    <small class="text-muted">All data encrypted at rest and in transit</small>
+                                </div>
+                            </div>
+                            <div class="security-item d-flex align-items-center mb-3">
+                                <div class="security-icon bg-primary text-white rounded-circle me-3">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Secure Authentication</div>
+                                    <small class="text-muted">Multi-factor authentication support</small>
+                                </div>
+                            </div>
+                            <div class="security-item d-flex align-items-center">
+                                <div class="security-icon bg-info text-white rounded-circle me-3">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">Secure Storage</div>
+                                    <small class="text-muted">MongoDB with enterprise security</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-success text-white py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-8 mx-auto">
+                    <h3 class="fw-bold mb-3">Ready to Experience These Features?</h3>
+                    <p class="lead mb-4">Join thousands of users who are already managing their finances better with FinTrack</p>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="index.html" class="btn btn-light btn-lg">
+                            <i class="fas fa-rocket me-2"></i>Start Free Trial
+                        </a>
+                        <a href="demo.html" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-play me-2"></i>View Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-chart-line me-2 text-success"></i>FinTrack
+                    </h5>
+                    <p class="text-muted">
+                        Empowering students and young professionals to take control of their financial future 
+                        with smart, simple tools.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://twitter.com" target="_blank" class="text-success me-3" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="text-success me-3" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://linkedin.com" target="_blank" class="text-success me-3" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com" target="_blank" class="text-success" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Product</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="features.html" class="text-muted text-decoration-none">Features</a></li>
+                        <li><a href="demo.html" class="text-muted text-decoration-none">Demo</a></li>
+                        <li><a href="how-it-works.html" class="text-muted text-decoration-none">How It Works</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-muted text-decoration-none">About</a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Help Center</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none" onclick="showPrivacyPolicy(); return false;">Privacy Policy</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none" onclick="showTermsOfService(); return false;">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Get Started</h6>
+                    <a href="#" class="btn btn-success btn-sm" onclick="scrollToSignup()">
+                        Sign Up Free
+                    </a>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2025 FinTrack. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-muted mb-0">Made with <i class="fas fa-heart text-success"></i> for better financial health</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

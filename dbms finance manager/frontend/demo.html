@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - FinTrack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success" href="index.html">
+                <i class="fas fa-chart-line me-2"></i>FinTrack
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="how-it-works.html">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="demo.html">Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-success btn-sm" href="#" onclick="scrollToSignup()">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-4 fw-bold mb-3">See FinTrack in Action</h1>
+                    <p class="lead">Explore our interactive demo dashboard and see how easy it is to manage your finances</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Dashboard -->
+    <section class="page-content">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="demo-notice bg-info text-white p-3 rounded mb-4">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>Demo Mode:</strong> This is a preview of the FinTrack dashboard with sample data. Create your account to start tracking your real finances.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Overview Cards -->
+            <div class="row g-4 mb-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="dashboard-card bg-white rounded shadow p-4 text-center">
+                        <div class="dashboard-icon mb-3">
+                            <i class="fas fa-wallet text-success fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-1">Total Balance</h5>
+                        <h3 class="text-success fw-bold mb-0">₹2,840</h3>
+                        <small class="text-muted">+₹340 this month</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="dashboard-card bg-white rounded shadow p-4 text-center">
+                        <div class="dashboard-icon mb-3">
+                            <i class="fas fa-chart-line text-primary fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-1">Monthly Income</h5>
+                        <h3 class="text-primary fw-bold mb-0">₹2,500</h3>
+                        <small class="text-muted">Regular salary</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="dashboard-card bg-white rounded shadow p-4 text-center">
+                        <div class="dashboard-icon mb-3">
+                            <i class="fas fa-credit-card text-warning fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-1">Monthly Expenses</h5>
+                        <h3 class="text-warning fw-bold mb-0">₹1,560</h3>
+                        <small class="text-muted">-₹90 vs last month</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="dashboard-card bg-white rounded shadow p-4 text-center">
+                        <div class="dashboard-icon mb-3">
+                            <i class="fas fa-piggy-bank text-info fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-1">Savings Rate</h5>
+                        <h3 class="text-info fw-bold mb-0">37.6%</h3>
+                        <small class="text-muted">+5% vs last month</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="row g-4 mb-5">
+                <!-- Expense Breakdown Chart -->
+                <div class="col-lg-6">
+                    <div class="dashboard-preview bg-white rounded shadow p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="fw-bold mb-0">Expense Breakdown</h5>
+                            <div class="btn-group btn-group-sm" role="group">
+                                <button type="button" class="btn btn-outline-success active" onclick="switchTimePeriod(this, 'expenseChart', 'month')">This Month</button>
+                                <button type="button" class="btn btn-outline-success" onclick="switchTimePeriod(this, 'expenseChart', 'lastMonth')">Last Month</button>
+                            </div>
+                        </div>
+                        <div class="chart-container" style="height: 300px;">
+                            <canvas id="expenseChart"></canvas>
+                        </div>
+                        <div class="chart-legend mt-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="legend-item d-flex align-items-center mb-2">
+                                        <div class="legend-color bg-success rounded-circle me-2" style="width: 12px; height: 12px;"></div>
+                                        <small>Food & Dining - ₹450</small>
+                                    </div>
+                                    <div class="legend-item d-flex align-items-center mb-2">
+                                        <div class="legend-color bg-primary rounded-circle me-2" style="width: 12px; height: 12px;"></div>
+                                        <small>Transportation - ₹200</small>
+                                    </div>
+                                    <div class="legend-item d-flex align-items-center">
+                                        <div class="legend-color bg-warning rounded-circle me-2" style="width: 12px; height: 12px;"></div>
+                                        <small>Entertainment - ₹150</small>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="legend-item d-flex align-items-center mb-2">
+                                        <div class="legend-color bg-info rounded-circle me-2" style="width: 12px; height: 12px;"></div>
+                                        <small>Shopping - ₹300</small>
+                                    </div>
+                                    <div class="legend-item d-flex align-items-center mb-2">
+                                        <div class="legend-color bg-secondary rounded-circle me-2" style="width: 12px; height: 12px;"></div>
+                                        <small>Bills - ₹400</small>
+                                    </div>
+                                    <div class="legend-item d-flex align-items-center">
+                                        <div class="legend-color bg-dark rounded-circle me-2" style="width: 12px; height: 12px;"></div>
+                                        <small>Other - ₹60</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monthly Trend Chart -->
+                <div class="col-lg-6">
+                    <div class="dashboard-preview bg-white rounded shadow p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="fw-bold mb-0">Monthly Trends</h5>
+                            <div class="btn-group btn-group-sm" role="group">
+                                <button type="button" class="btn btn-outline-success active" onclick="switchTimeRange(this, 'monthlyChart', '6months')">6 Months</button>
+                                <button type="button" class="btn btn-outline-success" onclick="switchTimeRange(this, 'monthlyChart', '1year')">1 Year</button>
+                            </div>
+                        </div>
+                        <div class="chart-container" style="height: 300px;">
+                            <canvas id="monthlyChart"></canvas>
+                        </div>
+                        <div class="trend-summary mt-3">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="trend-item">
+                                        <div class="text-success fw-bold">+₹400</div>
+                                        <small class="text-muted">Income Growth</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="trend-item">
+                                        <div class="text-warning fw-bold">-₹90</div>
+                                        <small class="text-muted">Expense Change</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="trend-item">
+                                        <div class="text-info fw-bold">+₹490</div>
+                                        <small class="text-muted">Net Improvement</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Budget Progress -->
+            <div class="row g-4 mb-5">
+                <div class="col-lg-8">
+                    <div class="dashboard-preview bg-white rounded shadow p-4">
+                        <h5 class="fw-bold mb-4">Budget Progress</h5>
+                        <div class="budget-items">
+                            <div class="budget-item mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-utensils text-success me-2"></i>
+                                        <span class="fw-bold">Food & Dining</span>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="fw-bold">₹450 / ₹500</div>
+                                        <small class="text-muted">90% used</small>
+                                    </div>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-warning" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="budget-item mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-car text-primary me-2"></i>
+                                        <span class="fw-bold">Transportation</span>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="fw-bold">₹180 / ₹200</div>
+                                        <small class="text-muted">90% used</small>
+                                    </div>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-success" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="budget-item mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-gamepad text-warning me-2"></i>
+                                        <span class="fw-bold">Entertainment</span>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="fw-bold">₹120 / ₹150</div>
+                                        <small class="text-muted">80% used</small>
+                                    </div>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-success" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="budget-item">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-shopping-bag text-info me-2"></i>
+                                        <span class="fw-bold">Shopping</span>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="fw-bold">₹280 / ₹300</div>
+                                        <small class="text-muted">93% used</small>
+                                    </div>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-warning" style="width: 93%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="dashboard-preview bg-white rounded shadow p-4">
+                        <h5 class="fw-bold mb-4">Recent Transactions</h5>
+                        <div class="transaction-list">
+                            <div class="transaction-item d-flex justify-content-between align-items-center py-2 border-bottom">
+                                <div class="d-flex align-items-center">
+                                    <div class="transaction-icon bg-success text-white rounded-circle me-3">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold">Lunch</div>
+                                        <small class="text-muted">Today, 1:30 PM</small>
+                                    </div>
+                                </div>
+                                <span class="text-danger fw-bold">-₹12.50</span>
+                            </div>
+                            <div class="transaction-item d-flex justify-content-between align-items-center py-2 border-bottom">
+                                <div class="d-flex align-items-center">
+                                    <div class="transaction-icon bg-primary text-white rounded-circle me-3">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold">Salary</div>
+                                        <small class="text-muted">Yesterday, 9:00 AM</small>
+                                    </div>
+                                </div>
+                                <span class="text-success fw-bold">+₹2,500.00</span>
+                            </div>
+                            <div class="transaction-item d-flex justify-content-between align-items-center py-2 border-bottom">
+                                <div class="d-flex align-items-center">
+                                    <div class="transaction-icon bg-warning text-white rounded-circle me-3">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold">Gas</div>
+                                        <small class="text-muted">Yesterday, 6:45 PM</small>
+                                    </div>
+                                </div>
+                                <span class="text-danger fw-bold">-₹45.00</span>
+                            </div>
+                            <div class="transaction-item d-flex justify-content-between align-items-center py-2 border-bottom">
+                                <div class="d-flex align-items-center">
+                                    <div class="transaction-icon bg-info text-white rounded-circle me-3">
+                                        <i class="fas fa-coffee"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold">Coffee</div>
+                                        <small class="text-muted">2 days ago, 8:15 AM</small>
+                                    </div>
+                                </div>
+                                <span class="text-danger fw-bold">-₹4.25</span>
+                            </div>
+                            <div class="transaction-item d-flex justify-content-between align-items-center py-2">
+                                <div class="d-flex align-items-center">
+                                    <div class="transaction-icon bg-secondary text-white rounded-circle me-3">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold">Rent</div>
+                                        <small class="text-muted">3 days ago, 12:00 PM</small>
+                                    </div>
+                                </div>
+                                <span class="text-danger fw-bold">-₹800.00</span>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="index.html" class="btn btn-outline-success btn-sm">View All Transactions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Savings Insights -->
+            <div class="row g-4 mb-5">
+                <div class="col-lg-12">
+                    <div class="dashboard-preview bg-white rounded shadow p-4">
+                        <h5 class="fw-bold mb-4">Smart Savings Insights</h5>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="insights-list">
+                                    <div class="insight-item p-3 bg-light rounded mb-3">
+                                        <div class="d-flex align-items-start">
+                                            <i class="fas fa-lightbulb text-warning me-3 mt-1"></i>
+                                            <div>
+                                                <h6 class="fw-bold mb-1">Dining Out Optimization</h6>
+                                                <p class="text-muted mb-0">You could save approximately ₹50 per month by reducing dining out expenses by 20%. Consider meal prep for 2 additional days per week.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="insight-item p-3 bg-light rounded mb-3">
+                                        <div class="d-flex align-items-start">
+                                            <i class="fas fa-trophy text-success me-3 mt-1"></i>
+                                            <div>
+                                                <h6 class="fw-bold mb-1">Excellent Savings Progress</h6>
+                                                <p class="text-muted mb-0">Great job! You're on track to meet your savings goal this month. Your savings rate has increased by 5% compared to last month.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="insight-item p-3 bg-light rounded">
+                                        <div class="d-flex align-items-start">
+                                            <i class="fas fa-chart-line text-primary me-3 mt-1"></i>
+                                            <div>
+                                                <h6 class="fw-bold mb-1">Income Growth Opportunity</h6>
+                                                <p class="text-muted mb-0">Consider setting up a side hustle or freelance work. Based on your current expenses, an additional ₹200/month could significantly boost your savings.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="savings-summary text-center">
+                                    <div class="savings-circle mx-auto mb-3">
+                                        <div class="position-relative">
+                                            <canvas id="savingsChart" width="120" height="120"></canvas>
+                                            <div class="position-absolute top-50 start-50 translate-middle text-center">
+                                                <div class="fw-bold text-success">37.6%</div>
+                                                <small class="text-muted">Savings Rate</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="fw-bold">Monthly Savings Goal</h6>
+                                    <div class="progress mb-2" style="height: 8px;">
+                                        <div class="progress-bar bg-success" style="width: 94%"></div>
+                                    </div>
+                                    <small class="text-muted">₹940 / ₹1,000 goal</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-success text-white py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-8 mx-auto">
+                    <h3 class="fw-bold mb-3">Ready to Start Your Financial Journey?</h3>
+                    <p class="lead mb-4">Create your free FinTrack account and start managing your finances like a pro</p>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="index.html" class="btn btn-light btn-lg">
+                            <i class="fas fa-rocket me-2"></i>Get Started Free
+                        </a>
+                        <a href="features.html" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-info-circle me-2"></i>Learn More
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <small class="text-light">
+                            <i class="fas fa-check me-1"></i>Free forever • <i class="fas fa-check me-1"></i>Setup in 2 minutes • <i class="fas fa-check me-1"></i>No credit card required
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-chart-line me-2 text-success"></i>FinTrack
+                    </h5>
+                    <p class="text-muted">
+                        Empowering students and young professionals to take control of their financial future 
+                        with smart, simple tools.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://twitter.com" target="_blank" class="text-success me-3" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="text-success me-3" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://linkedin.com" target="_blank" class="text-success me-3" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com" target="_blank" class="text-success" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Product</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="features.html" class="text-muted text-decoration-none">Features</a></li>
+                        <li><a href="demo.html" class="text-muted text-decoration-none">Demo</a></li>
+                        <li><a href="how-it-works.html" class="text-muted text-decoration-none">How It Works</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-muted text-decoration-none">About</a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Help Center</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none" onclick="showPrivacyPolicy(); return false;">Privacy Policy</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none" onclick="showTermsOfService(); return false;">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold mb-3">Get Started</h6>
+                    <a href="#" class="btn btn-success btn-sm" onclick="scrollToSignup()">
+                        Sign Up Free
+                    </a>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2024 FinTrack. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-muted mb-0">Made with <i class="fas fa-heart text-success"></i> for better financial health</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Demo page specific functions
+        function switchTimePeriod(button, chartId, period) {
+            // Remove active class from all buttons in the group
+            const btnGroup = button.closest('.btn-group');
+            btnGroup.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+            // In a real app, this would reload chart data based on period
+            console.log(`Switched to ${period} for ${chartId}`);
+        }
+        
+        function switchTimeRange(button, chartId, range) {
+            // Remove active class from all buttons in the group
+            const btnGroup = button.closest('.btn-group');
+            btnGroup.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+            // In a real app, this would reload chart data based on range
+            console.log(`Switched to ${range} for ${chartId}`);
+        }
+        
+        // Initialize demo charts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Expense breakdown chart
+            const expenseCtx = document.getElementById('expenseChart');
+            if (expenseCtx) {
+                new Chart(expenseCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Food & Dining', 'Transportation', 'Entertainment', 'Shopping', 'Bills', 'Other'],
+                        datasets: [{
+                            data: [450, 200, 150, 300, 400, 60],
+                            backgroundColor: [
+                                '#28a745',
+                                '#007bff',
+                                '#ffc107',
+                                '#17a2b8',
+                                '#6c757d',
+                                '#343a40'
+                            ],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Monthly trend chart
+            const monthlyCtx = document.getElementById('monthlyChart');
+            if (monthlyCtx) {
+                new Chart(monthlyCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        datasets: [{
+                            label: 'Income',
+                            data: [2100, 2200, 2100, 2400, 2300, 2500],
+                            borderColor: '#28a745',
+                            backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }, {
+                            label: 'Expenses',
+                            data: [1650, 1750, 1590, 1890, 1790, 1560],
+                            borderColor: '#dc3545',
+                            backgroundColor: 'rgba(220, 53, 69, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: {
+                                    color: 'rgba(0,0,0,0.1)'
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Savings rate chart
+            const savingsCtx = document.getElementById('savingsChart');
+            if (savingsCtx) {
+                new Chart(savingsCtx, {
+                    type: 'doughnut',
+                    data: {
+                        datasets: [{
+                            data: [37.6, 62.4],
+                            backgroundColor: ['#28a745', '#e9ecef'],
+                            borderWidth: 0,
+                            cutout: '75%'
+                        }]
+                    },
+                    options: {
+                        responsive: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
